@@ -43,7 +43,7 @@ esac
 # uncomment for a colored prompt, if the terminal has the capability; turned
 # off by default to not distract the user: the focus in a terminal window
 # should be on the output of commands, not on the prompt
-#force_color_prompt=yes
+force_color_prompt=yes
 
 if [ -n "$force_color_prompt" ]; then
     if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
@@ -57,7 +57,7 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+	PS1='${debian_chroot:+($debian_chroot)}\[\033[01;34m\]\w\[\033[00m\]\$ '
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
@@ -78,7 +78,6 @@ if [ -x /usr/bin/dircolors ]; then
     alias ls='ls --color=auto'
     #alias dir='dir --color=auto'
     #alias vdir='vdir --color=auto'
-
     alias grep='grep --color=auto'
     alias fgrep='fgrep --color=auto'
     alias egrep='egrep --color=auto'
@@ -89,7 +88,7 @@ fi
 
 # some more ls aliases
 alias ll='ls -alF'
-alias la='ls -la'
+alias la='ls -A'
 alias l='ls -CF'
 
 # Add an "alert" alias for long running commands.  Use like so:
@@ -116,10 +115,14 @@ if ! shopt -oq posix; then
   fi
 fi
 
+#Moje naredbe
 
-
-cd ~
-figlet HELLO , ADRIAN
+figlet HELLO ADRIAN
 lsb_release -a
 echo "Vrijeme za naredna 3 dana je..."
 ansiweather -f 3 -s true -l Rijeka
+
+#sourceanje
+
+source /opt/intel/parallel_studio_xe_2020.2.108/bin/psxevars.sh
+source /home/bogfoot/.my_commands.sh
