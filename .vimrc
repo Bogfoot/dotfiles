@@ -1,3 +1,19 @@
+:set nocompatible              " be iMproved, required
+filetype off                  " required
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+Plugin 'frazrepo/vim-rainbow'
+Plugin 'neoclide/npm.nvim', {'do' : 'npm install'}
+Plugin 'preservim/nerdtree'
+
+
+call vundle#end()
+
+
+let g:rainbow_active = 1
+
 :set number
 nmap <F3> :set rnu! <CR>
 :set laststatus=2
@@ -10,6 +26,5 @@ syntax on
 :set smartcase
 :set noswapfile
 :set incsearch
-filetype plugin indent on
-highlight ColorColumn ctermbg=blue
-call matchadd('ColorColumn','\%81v',100)
+set statusline=%<%f\ %h%m%r%{kite#statusline()}%=%-14.(%l,%c%V%)\ %P
+set laststatus=2  " always display the status line
