@@ -116,13 +116,16 @@ if ! shopt -oq posix; then
 fi
 
 #Moje naredbe
-
-figlet HELLO ADRIAN
-lsb_release -a
+neofetch
 echo "Vrijeme za naredna 3 dana je..."
 ansiweather -f 3 -s true -l Rijeka
 
-#sourceanje
+#exporti za quantum-espresso
+export PATH=$PATH:/usr/local/openmpi-4.1.0/bin
+export PATH=$PATH:/home/bogfoot/Downloads/qe-6.1/bin/
+export PATH=$PATH:/home/bogfoot/Downloads/vmd-1.9.3/bin/
 
-source /opt/intel/parallel_studio_xe_2020.2.108/bin/psxevars.sh
+#sourceanje
+source root/bin/thisroot.sh
+source /home/bogfoot/intel/parallel_studio_xe_2020.4.912/bin/psxevars.sh
 source /home/bogfoot/.my_commands.sh
